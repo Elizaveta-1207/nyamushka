@@ -1,0 +1,6 @@
+.element__cat {
+  position: absolute;
+  top: 207px;
+  left: -30px;
+  z-index: 0;
+}

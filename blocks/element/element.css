@@ -1,0 +1,42 @@
+@import url(./__card/element__card.css);
+@import url(./__cat/element__cat.css);
+@import url(./__description/element__description.css);
+@import url(./__title/element__title.css);
+@import url(./__flavor/element__flavor.css);
+@import url(./__portions/element__portions.css);
+@import url(./__present/element__present.css);
+@import url(./__marker/element__marker.css);
+@import url(./__weight/element__weight.css);
+@import url(./__kg/element__kg.css);
+@import url(./__info/element__info.css);
+@import url(./__buy/element__buy.css);
+
+@import url(./__card/_selected/element__card_selected.css);
+@import url(./__marker/_selected/element__marker_selected.css);
+@import url(./__card/_disabled/element__card_disabled.css);
+@import url(./__marker/_disabled/element__marker_disabled.css);
+
+.element {
+  position: relative;
+}
+
+.element::after {
+  position: absolute;
+  content: '';
+  width: 62px;
+  height: 51px;
+  top: -22px;
+  left: -26px;
+  background-color: transparent;
+  border-bottom: solid #1698d9 4px;
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width:424px) {
+  .element::after {
+    width: 57px;
+    height: 51px;
+    top: -23px;
+    left: -25px;
+  }
+}
