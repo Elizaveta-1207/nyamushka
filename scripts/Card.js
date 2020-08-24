@@ -4,7 +4,9 @@ export class Card {
     flavor,
     portions,
     present,
-    weight
+    weight,
+    infoSelected,
+    isSelected
   }, cardSelector) {
     this._description = description;
     this._flavor = flavor;
@@ -12,6 +14,9 @@ export class Card {
     this._present = present;
     this._weight = weight;
     this._cardSelector = cardSelector;
+    this._infoSelected = infoSelected;
+    this._isSelected = isSelected;
+    this._cardSelected = this._cardSelected.bind(this);
   }
 
   _getTemplate() {
@@ -34,14 +39,22 @@ export class Card {
   }
 
   _setEventListeners() {
-    const elementCard = this._element.querySelector('.element__card');
-    const element = this._element;
 
-    elementCard.addEventListener('click', function (evt) {
-      element.classList.toggle('element_selected');
-      this.classList.toggle('element__card_selected');
-      this.querySelector('.element__marker').classList.toggle('element__marker_selected');
-    });
+    this._card = this._element.querySelector('.element__card');
+    this._card.addEventListener('click', this._cardSelected);
+  }
+
+  _cardSelected() {
+    this._card.classList.toggle('element__card_selected');
+    this._card.querySelector('.element__marker').classList.toggle('element__marker_selected');
+
+    this._element.classList.toggle('element_selected');
+    this._isSelected = !this._isSelected;
+    console.log(this._isSelected);
+    // if (isSelected == true) {
+    //   element.querySelector('.element__info').textContent = this._infoSelected;
+    // }
+
   }
 
 }

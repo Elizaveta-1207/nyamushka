@@ -8,6 +8,8 @@ export const initialCards = [{
     weight: '0,5',
     infoSelected: 'Печень утки разварная с артишоками.',
     infoDisabled: 'Печалька, с фуа-гра закончился.',
+    isSelected: false,
+    isDisabled: false,
   },
   {
     description: 'Сказочное заморское яство',
@@ -18,6 +20,8 @@ export const initialCards = [{
     weight: '2',
     infoSelected: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
     infoDisabled: 'Печалька, с рыбой закончился.',
+    isSelected: false,
+    isDisabled: false,
   },
   {
     description: 'Сказочное заморское яство',
@@ -28,6 +32,8 @@ export const initialCards = [{
     weight: '5',
     infoSelected: 'Филе из цыплят с трюфелями в бульоне.',
     infoDisabled: 'Печалька, с курой закончился.',
+    isSelected: false,
+    isDisabled: false,
   },
 ];
 
