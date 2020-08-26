@@ -28,7 +28,7 @@ export const initialCards = [{
     buy: 'купи.',
     infoSelected: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
     infoDisabled: 'Печалька, с рыбой закончился.',
-    isSelected: false,
+    isSelected: true,
     isDisabled: false,
   },
   {

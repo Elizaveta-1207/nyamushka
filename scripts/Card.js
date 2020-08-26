@@ -62,19 +62,24 @@ export class Card {
     this._element.querySelector('.element__weight').textContent = this._weight;
 
     if (this._isDisabled) {
-      this._element.querySelector('.element__info').textContent = this._infoDisabled;
-      this._element.querySelector('.element__info').classList.add('element__info_disabled');
+      this._element.querySelector('.element__info-change').textContent = this._infoDisabled;
+      this._element.querySelector('.element__info-change').classList.add('element__info_disabled');
       this._element.querySelector('.element__card').classList.add('element__card_disabled');
       this._element.querySelector('.element__marker').classList.add('element__marker_disabled');
+      this._element.querySelector('.element__info-default').classList.add('element__info_hidden');
+
+    } else if (this._isSelected) {
+      this._element.querySelector('.element__info-change').textContent = this._infoSelected;
+      this._element.querySelector('.element__card').classList.add('element__card_selected');
+      this._element.querySelector('.element__marker').classList.add('element__marker_selected');
+      this._element.querySelector('.element__info-default').classList.add('element__info_hidden');
     } else {
       const elementBuy = this._element.querySelector('.element__buy');
-      this._element.querySelector('.element__info').textContent = this._info;
-      this._element.querySelector('.element__info').append(elementBuy);
+      this._element.querySelector('.element__info-default').textContent = this._info;
+      this._element.querySelector('.element__info-default').append(elementBuy);
       elementBuy.textContent = this._buy;
+      this._element.querySelector('.element__info-change').classList.add('element__info_hidden');
     }
-
-
-
 
     return this._element;
   }
@@ -86,14 +91,10 @@ export class Card {
     this._card.addEventListener('mouseleave', this._cardHover);
     this._card.addEventListener('mouseenter', this._cardHoverOn);
 
-
-    // console.log(this._elementBuy);
     this._element.querySelector('.element__buy').addEventListener('click', this._cardSelected);
   }
 
   _cardHoverOn() {
-    console.log('навела');
-    // console.log(this._isSelected);
     if (this._isSelected) {
 
       this._element.querySelector('.element__description').textContent = this._description;
@@ -102,7 +103,6 @@ export class Card {
   }
 
   _cardHover() {
-    // console.log(this._isSelected);
     if (this._isSelected) {
       this._element.querySelector('.element__description').textContent = this._descriptionSelectedHover;
       this._element.querySelector('.element__description').classList.add('element__description_selected-hover');
@@ -117,12 +117,17 @@ export class Card {
     this._isSelected = !this._isSelected;
 
     if (this._isSelected) {
-      this._element.querySelector('.element__info').textContent = this._infoSelected;
+      this._element.querySelector('.element__info-change').textContent = this._infoSelected;
+      this._element.querySelector('.element__info-change').classList.remove('element__info_hidden');
+      this._element.querySelector('.element__info-default').classList.add('element__info_hidden');
     } else {
-      console.log('123');
-      this._element.querySelector('.element__info').textContent = this._info;
-      // this._element.querySelector('.element__info').append(elementBuy);
-      // elementBuy.textContent = this._buy;
+
+      const elementBuy = this._element.querySelector('.element__buy');
+      this._element.querySelector('.element__info-default').textContent = this._info;
+      this._element.querySelector('.element__info-default').append(elementBuy);
+      elementBuy.textContent = this._buy;
+      this._element.querySelector('.element__info-change').classList.add('element__info_hidden');
+      this._element.querySelector('.element__info-default').classList.remove('element__info_hidden');
     }
 
   }

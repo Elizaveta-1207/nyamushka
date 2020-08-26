@@ -18,6 +18,7 @@
 @import url(./__card/_disabled/element__card_disabled.css);
 @import url(./__marker/_disabled/element__marker_disabled.css);
 @import url(./__info/_disabled/element__info_disabled.css);
+@import url(./__info/_hidden/element__info_hidden.css);
 @import url(./__description/_selected-hover/element_description_selected-hover.css);
 
 
