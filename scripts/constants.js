@@ -14,7 +14,6 @@ export const initialCards = [{
     infoDisabled: 'Печалька, с фуа-гра закончился.',
     isSelected: false,
     isDisabled: false,
-    isHover: false,
   },
   {
     description: 'Сказочное заморское яство',
@@ -31,7 +30,6 @@ export const initialCards = [{
     infoDisabled: 'Печалька, с рыбой закончился.',
     isSelected: false,
     isDisabled: false,
-    isHover: false,
   },
   {
     description: 'Сказочное заморское яство',
@@ -47,8 +45,7 @@ export const initialCards = [{
     infoSelected: 'Филе из цыплят с трюфелями в бульоне.',
     infoDisabled: 'Печалька, с курой закончился.',
     isSelected: false,
-    isDisabled: false,
-    isHover: false,
+    isDisabled: true,
   },
 ];
 

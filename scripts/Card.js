@@ -11,8 +11,9 @@ export class Card {
     info,
     buy,
     infoSelected,
+    infoDisabled,
     isSelected,
-    isHover
+    isDisabled
   }, cardSelector) {
     this._description = description;
     this._descriptionSelectedHover = descriptionSelectedHover;
@@ -26,8 +27,9 @@ export class Card {
     this._buy = buy;
     this._cardSelector = cardSelector;
     this._infoSelected = infoSelected;
+    this._infoDisabled = infoDisabled;
     this._isSelected = isSelected;
-    this._isHover = isHover;
+    this._isDisabled = isDisabled;
     this._cardSelected = this._cardSelected.bind(this);
     this._cardHover = this._cardHover.bind(this);
     this._cardHoverOn = this._cardHoverOn.bind(this);
@@ -59,10 +61,19 @@ export class Card {
 
     this._element.querySelector('.element__weight').textContent = this._weight;
 
-    const elementBuy = this._element.querySelector('.element__buy');
-    this._element.querySelector('.element__info').textContent = this._info;
-    this._element.querySelector('.element__info').append(elementBuy);
-    elementBuy.textContent = this._buy;
+    if (this._isDisabled) {
+      this._element.querySelector('.element__info').textContent = this._infoDisabled;
+      this._element.querySelector('.element__info').classList.add('element__info_disabled');
+      this._element.querySelector('.element__card').classList.add('element__card_disabled');
+      this._element.querySelector('.element__marker').classList.add('element__marker_disabled');
+    } else {
+      const elementBuy = this._element.querySelector('.element__buy');
+      this._element.querySelector('.element__info').textContent = this._info;
+      this._element.querySelector('.element__info').append(elementBuy);
+      elementBuy.textContent = this._buy;
+    }
+
+
 
 
     return this._element;
