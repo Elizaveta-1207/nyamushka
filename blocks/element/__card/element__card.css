@@ -1,9 +1,9 @@
 .element__card {
   width: 320px;
   height: 480px;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
   color: #000;
-  border: solid #1698d9 4px;
+  /* border: solid #1698d9 4px; */
   border-radius: 12px;
   position: relative;
   box-sizing: border-box;
@@ -11,10 +11,34 @@
   padding: 0 0 0 43px;
   position: relative;
 
-  clip-path: polygon(13.7% 0, 100% 0, 100% 100%, 0 100%, 0 9.4%);
+  /* clip-path: polygon(13.7% 0, 100% 0, 100% 100%, 0 100%, 0 9.4%); */
   cursor: pointer;
+  background-image: linear-gradient(135deg, transparent 30px, #1698d9 0);
+  z-index: 0;
 
 }
+
+.element__card:before {
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 5px;
+  z-index: -1;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 0 8px 8px 8px;
+  background-image: linear-gradient(135deg, transparent 28px, #f2f2f2 0);
+}
+
+
+.element__card:hover {
+  background-image: linear-gradient(135deg, transparent 30px, #2ea8e5 0);
+}
+
+.element__card:hover .element__marker {
+  background-color: #2ea8e5;
+}
+
 
 @media screen and (max-width:424px) {
   .element__card {

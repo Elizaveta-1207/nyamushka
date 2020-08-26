@@ -4,7 +4,9 @@
 @import url(./__title/element__title.css);
 @import url(./__flavor/element__flavor.css);
 @import url(./__portions/element__portions.css);
+@import url(./__portions-amount/element__potrions-amount.css);
 @import url(./__present/element__present.css);
+@import url(./__present-amount/element__present-amount.css);
 @import url(./__marker/element__marker.css);
 @import url(./__weight/element__weight.css);
 @import url(./__kg/element__kg.css);
@@ -15,12 +17,16 @@
 @import url(./__marker/_selected/element__marker_selected.css);
 @import url(./__card/_disabled/element__card_disabled.css);
 @import url(./__marker/_disabled/element__marker_disabled.css);
+@import url(./__info/_disabled/element__info_disabled.css);
+@import url(./__description/_selected-hover/element_description_selected-hover.css);
+
+
 
 .element {
   position: relative;
 }
 
-.element::after {
+/* .element::after {
   position: absolute;
   content: '';
   width: 62px;
@@ -30,7 +36,7 @@
   background-color: transparent;
   border-bottom: solid #1698d9 4px;
   transform: rotate(-45deg);
-}
+} */
 
 @media screen and (max-width:424px) {
   .element::after {
