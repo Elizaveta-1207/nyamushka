@@ -1,6 +1,6 @@
 import {
   initialCards,
-  validationParams,
+  params,
   templateId
 } from './constants.js';
 
@@ -11,7 +11,7 @@ import {
 const elementsList = document.querySelector('.elements__list');
 
 function createCard(data) {
-  const card = new Card(data, templateId);
+  const card = new Card(data, templateId, params);
   const cardElement = card.generateCard();
   return cardElement;
 }

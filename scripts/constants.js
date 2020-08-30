@@ -50,13 +50,19 @@ export const initialCards = [{
 ];
 
 // объект настроек с селекторами и классами формы
-export const validationParams = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
+export const params = {
+  cardSelector: '.element__card',
+  descriptionSelector: '.element__description',
+  flavorSelector: '.element__flavor',
+  portionsSelector: '.element__portions',
+  portionsAmountSelector: '.element__portions-amount',
+  presentSelector: '.element__present',
+  presentAmountSelector: '.element__present-amount',
+  markerSelector: '.element__marker',
+  weightSelector: '.element__weight',
+  infoDefaultSelector: '.element__info-default',
+  infoChangeSelector: '.element__info-change',
+
 };
 
 export const templateId = '#element';
